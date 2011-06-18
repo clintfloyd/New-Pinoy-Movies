@@ -1,0 +1,11 @@
+.featureRotator { width: 400px; height: 240px; position: relative; border: solid 1px #aaa; margin: 0 auto; }
+	.featureRotator div { position: absolute; width: 400px; height: 240px; background-repeat: no-repeat; }
+	.fr_slide1 { background: url('images/Chrysanthemum.jpg'); }
+	.fr_slide2 { background: url('images/Penguins.jpg'); }
+	.fr_slide3 { background: url('images/Koala.jpg'); }
+		.featureRotator div div { height: 84px; bottom: 0; }
+			.featureRotator div div a { font-weight: bold; font-style: italic; font-size: 13px; color: #2085bd; }
+			.featureRotator div div h5 { color: #333; margin-top: 8px !important; text-indent: 20px; }
+			.featureRotator div div p { color: #333; margin-top: 5px; font-size: 13px; margin-left: 20px; width: 80%; }
+			.fr_slide1 div h5, .fr_slide1 div p { color: #fff !important; }
+			.fr_slide3 div p { width: 60% !important; }
