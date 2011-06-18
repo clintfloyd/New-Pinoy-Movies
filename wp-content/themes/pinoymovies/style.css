@@ -197,8 +197,8 @@ body{
 	-moz-box-shadow: 0 0 18px #A4A4A4;
 }
 .featured-container{
-	width:305px;
-	height:300px;
+	width:300px;
+	height:305px;
 	border:1px solid #C7C5AD;
 	float:left;
 	margin-right:38px;
@@ -374,12 +374,12 @@ body{
 	color:#BEBB8E;
 }
 .mov-container{
-	width:104px;
-	height:160px;
+	width:190px;
+	height:220px;
 	border:1px solid #9DB5D6;
 	float:left;
-	margin-right:5px;
-	margin-bottom:5px;
+	margin-right:10px;
+	margin-bottom:10px;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	cursor:pointer;
@@ -389,8 +389,8 @@ body{
 	-moz-box-shadow: 0 1px 5px #000000;
 }
 .mov-container .mov-thumb{
-	width:94px;
-	height:100px;
+	width:181px;
+	height:175px;
 	padding:1px;
 	margin:3px;
 	background:#DBE0F2;
@@ -973,4 +973,12 @@ ol.commentlist li{
 	background:#fff;
 	/*background:#fff url("http://img833.imageshack.us/img833/782/3876722540firefox.jpg") center 100px no-repeat;*/
 	z-index:9998;
+}
+.nomargin{
+	margin-right:0px;
+}
+.newItem {
+    float: right;
+    margin-left: 135px;
+    position: absolute;
 }

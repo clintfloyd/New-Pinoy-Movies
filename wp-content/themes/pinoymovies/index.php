@@ -71,7 +71,7 @@
 			while (have_posts()) : the_post(); 
 			$counter++;
 			$xxx++;
-			if($xxx >= 7){
+			if($xxx >= 5){
 				$style=" nomargin";
 				$xxx=0;
 			}else{
@@ -97,12 +97,14 @@
 				
 				if($post_date_string >= $last_3_days_string){	
 				?>
-					<img src="/new.gif" alt="new pinoy movies" border="0" class="newItem" />
+					<img src="/new.png" alt="new pinoy movies" border="0" class="newItem" />
 				<?php
 				}
+				$tmpThumb = get_post_meta(get_the_ID(), '_video_thumbnail_small',true);
+				$thumbnailsource = isset($tmpThumb) && $tmpThumb != "" ? get_post_meta(get_the_ID(), '_video_thumbnail_small',true) : "/noimage.png";
 				?>
 				<div class="mov-thumb">
-					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies"><img style="width:145px; height:150px;" src="<?php echo get_post_meta(get_the_ID(), '_video_thumbnail_small',true)?>" alt="new pinoy movies, free tagalog movies, <?php echo the_title(); ?>" border="0" /></a>
+					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies"><img style="width:183px; height:183px;" src="<?php echo $thumbnailsource;?>" alt="new pinoy movies, free tagalog movies, <?php echo the_title(); ?> | <?php echo the_excerpt(); ?>" border="0" /></a>
 				</div>
 				<div class="mov-title">
 					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies">
