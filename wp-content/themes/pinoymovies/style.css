@@ -894,51 +894,6 @@ body{
 }
 
 
-form#commentform{
-	display:inline;
-}
-form#commentform p label{
-	font-size:12px;
-	font-weight:bold;
-	color:#77A477;
-	text-shadow:0 1px 0 #B8D8B8;
-}
-form#commentform input[type="submit"]{
-	padding:10px;
-	-moz-border-radius:5px;
-	font-weight:bold;
-	background:#2C7C2D;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2C7C2D), to(#9DB99D)); 
-	background-image: -moz-linear-gradient(0% 100% 90deg, #2C7C2D, #9DB99D);
-	border:1px solid #2C862E;
-	font-size:11px;
-	color:#ffffff;
-	text-shadow:0 1px 0 #3F8540;
-}
-form#commentform input[type="text"],form#commentform textarea{
-	display:block;
-	width:50%;
-	padding:10px;
-	border:1px solid #7F9DB9;
-}
-form#commentform input:focus[type="text"],form#commentform textarea:focus{
-	border:1px solid #77A477;
-}
-.form-allowed-tags{
-	display:block;
-	width:50%;
-}
-ol.commentlist{
-	padding:0;
-	margin:0;
-	list-style:none;
-}
-ol.commentlist li{
-	border:1px solid #B8D8B8;
-	display:block;
-	margin:3px;
-	padding:5px;
-}
 
 .tagcloudfooter{
 	text-align:center
@@ -981,4 +936,186 @@ ol.commentlist li{
     float: right;
     margin-left: 135px;
     position: absolute;
+}
+h3#comments {
+    background: none repeat scroll 0 0 #222120;
+    color: #EDE9D9;
+    font-size: 18px;
+    font-weight: bold;
+    height: 100%;
+    padding: 23px;
+}
+h3#comments span {
+    color: #878278;
+}
+.commentlist .comment, .pingback {
+    background: none repeat scroll 0 0 #3A3937;
+    border-top: 1px solid #686761;
+    height: 100%;
+}
+.commentlist li {
+    list-style-type: none;
+}
+.commentlist .depth-1 .comment-body {
+    background: none repeat scroll 0 0 transparent;
+}
+.commentlist .comment-body {
+    color: #EDE9D9;
+    font-size: 14px;
+    height: 100%;
+    line-height: 18px;
+    padding: 25px;
+}
+.commentlist .comment-author {
+    margin-bottom: 10px;
+}
+.cl, .clear {
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -4000px;
+}
+.commentlist .reply {
+    display: inline;
+    float: right;
+    margin-top: 20px;
+}
+.commentlist .reply a {
+    background: none repeat scroll 0 0 #000000;
+    color: #878278;
+    display: block;
+    line-height: 28px;
+    text-align: center;
+    width: 80px;
+}
+.commentlist .comment-meta {
+    color: #878278;
+    font-size: 12px;
+    margin-top: 25px;
+}
+.commentlist .comment {
+    background: none repeat scroll 0 0 #3A3937;
+    border-top: 1px solid #686761;
+    height: 100%;
+}
+.commentlist li {
+    list-style-type: none;
+}
+.commentlist .depth-2 .comment-body {
+    background: url("images/comments-depth.gif") no-repeat scroll 41px 13px transparent;
+    padding-left: 83px;
+}
+
+.commentlist .depth-1 .comment-body {
+    background: none repeat scroll 0 0 transparent;
+}
+
+.commentlist .comment-body {
+    color: #EDE9D9;
+    font-size: 14px;
+    height: 100%;
+    line-height: 18px;
+    padding: 16px;
+}
+.commentlist .avatar {
+    border: 5px solid #FFFFFF;
+    display: inline;
+    float: right;
+    margin-left: 38px;
+}
+.commentlist .reply {
+    display: inline;
+    float: right;
+    margin-top: 20px;
+}
+.commentlist .reply a {
+    background: none repeat scroll 0 0 #000000;
+    color: #878278;
+    display: block;
+    line-height: 28px;
+    text-align: center;
+    width: 80px;
+}
+.commentlist .comment-author p {
+    color: #878278;
+    font-size: 16px;
+}
+.commentlist .comment-author p strong a {
+	color: #EDE9D9;
+	text-decoration:none;
+}
+.commentlist .comment-author p strong {
+    color: #EDE9D9;
+}
+#respond {
+    background: none repeat scroll 0 0 #EDE9D9;
+    margin-bottom: 20px;
+    padding: 30px 40px;
+}
+#respond form {
+    background: url("images/respond-bg.gif") no-repeat scroll right 0 transparent;
+    height: 100%;
+}
+#respond h3 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+.field {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E1DDCC;
+    font-family: "Myriad Pro","Trebuchet MS",Tahoma,Sans-Serif;
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 247px;
+}
+textarea.field {
+    height: 158px;
+}
+.field {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E1DDCC;
+    font-family: "Myriad Pro","Trebuchet MS",Tahoma,Sans-Serif;
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 247px;
+}
+#respond form label {
+    display: block;
+    padding: 9px 0 8px;
+}
+style.css (line 206)
+form * {
+    font-family: "Myriad Pro","Trebuchet MS",Tahoma,Sans-Serif;
+}
+#respond form .col {
+    display: inline;
+    float: left;
+    margin-right: 22px;
+    width: 269px;
+}
+.omega {
+    margin-right: 0 !important;
+}
+#respond form .button {
+    background: none repeat scroll 0 0 #3A3937;
+    border: 0 none;
+    color: #FFFFFF;
+    display: inline;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    padding: 10px 25px;
+}
+style.css (line 208)
+form .button {
+    cursor: pointer;
+}
+.commentlist {
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
 }

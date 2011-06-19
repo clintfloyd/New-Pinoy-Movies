@@ -1,14 +1,15 @@
 <div class="billboard-container" id="thebillboard">
 	<div class="billboard-content" id="thebillboardcontent">
+		<div class="bbcont" id="newpinoymoviesbillboard0" style="background:url('/rizal.jpg');"></div>
 		<?php
 		wp_reset_query();
-		$xy = 0;
+		$xy =1;
 		$style_new = "";
 		add_filter('posts_fields', 'featured_fields');
 		add_filter('posts_join', 'featured_join');
 		add_filter('posts_where', 'featured_where_featured');
 		$featuredPosts = new WP_Query();
-		$featuredPosts->query('showposts=8');
+		$featuredPosts->query('showposts=7');
 		$x=0;
 		$controller=0;
 		while ($featuredPosts->have_posts()) : $featuredPosts->the_post();
@@ -30,15 +31,20 @@
 		?>
 	</div>
 	<div class="billboard-menu" class="featured" id="thebillboardmenu">
+		<div class="featthumb">
+				<a href="#newpinoymoviesbillboard0" rel="<?php echo $xy; ?>" title="New Pinoy Movies">
+					<img style="" src="/rizal-t.jpg" alt="new pinoy movies, watch online" border="0" />
+				</a>
+			</div>
 		<?php
 		wp_reset_query();
-		$xy = 0;
+		$xy = 1;
 		$style_new = "";
 		add_filter('posts_fields', 'featured_fields');
 		add_filter('posts_join', 'featured_join');
 		add_filter('posts_where', 'featured_where_featured');
 		$featuredPosts = new WP_Query();
-		$featuredPosts->query('showposts=8');
+		$featuredPosts->query('showposts=7');
 		$x=0;
 		$controller=0;
 		while ($featuredPosts->have_posts()) : $featuredPosts->the_post();

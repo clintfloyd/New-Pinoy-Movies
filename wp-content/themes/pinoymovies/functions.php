@@ -1,7 +1,7 @@
 <?php
 	define("EV_VERSION", 41);
 	remove_action( 'init', 'wp_admin_bar_init' );
-	
+	function print_comment($comment, $args, $depth) {	$GLOBALS['comment'] = $comment; ?>	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">		<div class="comment-body" id="comment-<?php comment_ID(); ?>">		    <div class="comment-author vcard">		        <?php echo get_avatar($comment, 70); ?>		        <p><strong><?php comment_author_link() ?></strong> says,</p>		    </div>		    		    <?php if ($comment->comment_approved == '0') : ?>		        <em><?php _e('Your comment is awaiting moderation.') ?></em><br />		    <?php endif; ?>		    		    <?php comment_text() ?>		    <?php edit_comment_link(__('(Edit)'),'  ','') ?>		    		    <div class="cl">&nbsp;</div>			<div class="reply">				<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>			</div>			<p class="comment-meta">on <?php comment_date('d F Y') ?> / <?php comment_time('g:i A') ?></p>			<div class="cl">&nbsp;</div>		</div>	<?php}
 	
 	function get_the_content_with_formatting ($more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
 		$content = get_the_content($more_link_text, $stripteaser, $more_file);
