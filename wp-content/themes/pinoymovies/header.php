@@ -10,7 +10,7 @@
 	<meta name="Author" content="newpinoymovies@gmail.com" /> 
 	<meta name="revisit-after" content="1 days"> 
 	<title><?php wp_title(' |', true, 'right'); ?>New Pinoy Movies - Watch Free Tagalog Movie, Pinoy Movie, Filipino Movie, ABS-CBN, GMA, TFC, Pinoy TV, Melason, Pinoy Big Brother, Filipino Channel, Pinoy Chat</title>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />	<?php	if(is_home()){	?>	<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/homepage.css" type="text/css" media="screen" />	<?php	}	?>
 
 
 	<script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.js" type="text/javascript"></script>

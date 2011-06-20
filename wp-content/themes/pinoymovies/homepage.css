@@ -1,0 +1,29 @@
+.commentcount{
+	padding:1px 2px;
+	font-size:11px;
+	font-family:Arial, Helvetica, sans-serif;
+	background:#99CC38;
+	margin:10px;
+	color:#fff;
+	border-radius:10px;
+	position:absolute;
+	border:1px solid #8EBE34;
+}
+.commentcount span{
+	display:none;
+}
+.commentcount:hover>span{
+	display:inline;
+}
+.mov-container:hover > .commentcount span{
+	display:inline;
+}
+.movie-menu li {
+	float:left;
+}
+.movie-menu ul li a h1 {
+	float:left;
+}
+.movie-menu li span{
+	float:right;
+}

@@ -1,5 +1,7 @@
 <?php
+	global $wpdb;
 	global $cat_name;
+	
 	$cat_name = "pinoy movies";
 	$req_url = $_SERVER['REQUEST_URI'];
 	$path_translated = explode("/",$req_url);
@@ -24,7 +26,7 @@
 		
 		<div class="movie-menu">
 			<ul>
-				<li id="pinoymovies" class="menu"><a href="javascript:void(0);"><h1>Pinoy Movies</h1></a></li>
+				<li id="pinoymovies" class="menu"><a href="javascript:void(0);"><h1>Pinoy Movies</h1></a><span><a href="<?php bloginfo('url'); ?>/category/feed/rss"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/rss.png" alt="rss" /></a></span></li>
 				<li id="tvprograms" class="menu disabled"><a href="javascript:void(0);"><h1>TV Programs</h1></a></li>
 				<li id="asianhorror" class="menu disabled"><a href="javascript:void(0);"><h1>Asian Horror Movies</h1></a></li>
 				<li id="contactus" class="menu red"><a href="/contact-us/"><h1>Contact Us</h1></a></li>
@@ -102,9 +104,21 @@
 				}
 				$tmpThumb = get_post_meta(get_the_ID(), '_video_thumbnail_small',true);
 				$thumbnailsource = isset($tmpThumb) && $tmpThumb != "" ? get_post_meta(get_the_ID(), '_video_thumbnail_small',true) : "/noimage.png";
+				
+				$commentscount = get_comments_number();
+
+				if($commentscount == 1 || $commentscount == 0 ): $commenttext = 'comment'; endif;
+				if($commentscount > 1 ): $commenttext = 'comments'; endif;
+				
+				$xpert = get_the_excerpt();
+				$xpert = str_replace("[...]","",$xpert);
+				$xpert = str_replace("<p>","",$xpert);
+				$xpert = str_replace("</p>","",$xpert);
+				
 				?>
+				<span class="commentcount"><?php echo $commentscount; ?><span class="innerspan"> <?php echo $commenttext; ?></span></span>
 				<div class="mov-thumb">
-					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies"><img style="width:183px; height:183px;" src="<?php echo $thumbnailsource;?>" alt="new pinoy movies, free tagalog movies, <?php echo the_title(); ?> | <?php echo the_excerpt(); ?>" border="0" /></a>
+					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies"><img style="width:183px; height:183px;" src="<?php echo $thumbnailsource;?>" alt="new pinoy movies, free tagalog movies, <?php echo the_title(); ?> | <?php echo $xpert; ?>" border="0" /></a>
 				</div>
 				<div class="mov-title">
 					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies">
@@ -150,11 +164,16 @@
 				}
 				$tmpThumb = get_post_meta(get_the_ID(), '_video_thumbnail_small',true);
 				$thumbnailsource = isset($tmpThumb) && $tmpThumb != "" ? get_post_meta(get_the_ID(), '_video_thumbnail_small',true) : "/noimage.png";
+				
+				$xpert = get_the_excerpt();
+				$xpert = str_replace("[...]","",$xpert);
+				$xpert = str_replace("<p>","",$xpert);
+				$xpert = str_replace("</p>","",$xpert);
 			?>
 		
 				<div class="mov-container<?php echo $style;?>">
 					<div class="mov-thumb">
-						<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Online | New Pinoy Movies"><img style="width:183px; height:183px;" src="<?php echo $thumbnailsource;?>" alt="new pinoy movies, free tagalog movies, <?php echo the_title(); ?> | <?php the_excerpt(); ?>" border="0" /></a>
+						<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Online | New Pinoy Movies"><img style="width:183px; height:183px;" src="<?php echo $thumbnailsource;?>" alt="new pinoy movies, free tagalog movies, <?php echo the_title(); ?> | <?php echo $xpert; ?>" border="0" /></a>
 					</div>
 					<div class="mov-title">
 						<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Online | New Pinoy Movies">
