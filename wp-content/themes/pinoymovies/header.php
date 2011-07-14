@@ -33,22 +33,58 @@
 				jQuery(".children").toggle();
 			});
 
-jQuery.ajax({
-  type: "GET",
-  url: "/chatbox.htm",
-  cache: true,
-  beforeSend: function(html){
-     jQuery("#chatboxcontainer").html("Please wait while the Chat Box is loading...");
-  },
-  success: function(html){
-     jQuery("#chatboxcontainer").html(html);
-  },
-  statusCode:{
-     404: function(){
-      jQuery("#chatboxcontainer").html("<h1>404/File Not Found</h1>");
-     }
-  }
-});
+			jQuery.ajax({
+			  type: "GET",
+			  url: "/chatbox.htm",
+			  cache: true,
+			  beforeSend: function(html){
+			     jQuery("#chatboxcontainer").html("Please wait while the Chat Box is loading...");
+			  },
+			  success: function(html){
+			     jQuery("#chatboxcontainer").html(html);
+			  },
+			  statusCode:{
+			     404: function(){
+			      jQuery("#chatboxcontainer").html("<h1>404/File Not Found</h1>");
+			     }
+			  }
+			});
+			
+			jQuery("#lblSearch").click(function(){
+				jQuery("#txtboxsearch").focus();
+			});
+			
+			jQuery("#txtboxsearch").keyup(function(){
+				
+				var txtField = jQuery("#txtboxsearch").val().length;
+
+				if(txtField >=1){
+					jQuery("#lblSearch").animate({opacity: 0,
+												  left: '-=10',
+												  height: '-=0'},250,function(){
+												  	//Animation Complete
+												  	jQuery("#lblSearch").hide();											  
+												  });
+				}
+			});
+			
+			jQuery("#txtboxsearch").blur(function(){
+				
+				var txtField = jQuery("#txtboxsearch").val().length;
+
+				if(txtField >=1){
+					jQuery("#lblSearch").animate({opacity: 0,
+												  left: '-=10',
+												  height: '-=0'},250,function(){
+												  	//Animation Complete
+												  	jQuery("#lblSearch").hide();											  
+												  });
+				}else{
+					jQuery("#lblSearch").css("opacity","1");
+					jQuery("#lblSearch").css("left","125px");
+					jQuery("#lblSearch").fadeIn("fast");
+				}
+			});
 
 
 		});
@@ -109,32 +145,16 @@ jQuery.ajax({
 					<br />
 					<span>Watch New Pinoy Movies Online. Free Movies.</span>
 				</div>
-				<?php /*
-				<div class="ad"> */ ?>				
-				<?php /*  if($_SERVER['SERVER_NAME'] == "newpinoymovies.com" ||  $_SERVER['SERVER_NAME']=="www.newpinoymovies.com"){?>
-					<script type="text/javascript">
-					//interstitial ad
-					clicksor_enable_inter = true; clicksor_maxad = -1;	 
-					clicksor_hourcap = -1; clicksor_showcap = 2;
-					clicksor_enable_adhere = false;
-					//default pop-under house ad url
-					clicksor_enable_pop = false; 
-					clicksor_frequencyCap = -1;
-					durl = 'http://www.newpinoymovies.com';
-					//default banner house ad url 
-					clicksor_default_url = 'http://www.pinoy-movies.info/sites/images-01/leaderboard.php';
-					clicksor_banner_border = '#f2da00'; clicksor_banner_ad_bg = '#FFFFFF';
-					clicksor_banner_link_color = '#000000'; clicksor_banner_text_color = '#666666';
-					clicksor_banner_image_banner = true; clicksor_banner_text_banner = true;
-					clicksor_layer_border_color = '';
-					clicksor_layer_ad_bg = ''; clicksor_layer_ad_link_color = '';
-					clicksor_layer_ad_text_color = ''; clicksor_text_link_bg = '';
-					clicksor_text_link_color = '#ff630c'; clicksor_enable_text_link = true;
-					</script>
-					<script type="text/javascript" src="http://ads.clicksor.com/showAd.php?nid=1&amp;pid=86254&amp;adtype=1&amp;sid=195131"></script>
-					<noscript><a href="http://www.yesadvertising.com">affiliate marketing</a></noscript>
-				<?php } 
-				</div> */ ?>
+				
+				<div class="linkad">
+					<ul class="links">
+						<li><a href="http://www.tagalogmoviesonline.com/">Tagalog Movie Online</a></li>
+						<li class="separator"><a href="javascript:void(0);">Help</a></li>
+						<li><a href="<?php bloginfo('url');?>/about">About</a></li>
+						<li><a href="<?php bloginfo('url'); ?>/disclaimer">Disclaimer</a></li>
+						<li><a href="<?php bloginfo('url'); ?>/contact-us">Contact Us</a></li>
+					</ul>
+				</div>
 				<br clear="all" />
 			</div>
 			
@@ -230,7 +250,8 @@ jQuery.ajax({
 				</div>
 				<div class="search-container">
 					<form method="get" action="/">
-						<input type="text" name="s" id="txtboxsearch" value="search your movies here!" class="inactive" onclick="javascript:txtbox(this);" />
+						<label id="lblSearch">Search movies here</label>
+						<input type="text" name="s" id="txtboxsearch" class="inactive" />
 					</form>
 				</div>
 				<br clear="all" />

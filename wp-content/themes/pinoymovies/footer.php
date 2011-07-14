@@ -3,8 +3,9 @@
 		<!-- nuffnang -->		
 		<script type="text/javascript">		
 		nuffnang_bid = "4bd92e53f88cddaad9e6e4c32fc99417";		
-		</script>		
-		<script type="text/javascript" src="http://synad2.nuffnang.com.ph/k.js"></script>		
+		</script>
+		<!--//
+		<script type="text/javascript" src="http://synad2.nuffnang.com.ph/k.js"></script>	//-->	
 		<!-- nuffnang-->		</div>				<div class="semi-footer">			
 			<div class="boxes">
 								<div>
