@@ -1,6 +1,5 @@
 <div class="billboard-container" id="thebillboard">
 	<div class="billboard-content" id="thebillboardcontent">
-		<div class="bbcont" id="newpinoymoviesbillboard0" style="background:url('/rizal.jpg');"></div>
 		<?php
 		wp_reset_query();
 		$xy =1;
@@ -31,11 +30,6 @@
 		?>
 	</div>
 	<div class="billboard-menu" class="featured" id="thebillboardmenu">
-		<div class="featthumb">
-				<a href="#newpinoymoviesbillboard0" rel="<?php echo $xy; ?>" title="New Pinoy Movies">
-					<img style="" src="/rizal-t.jpg" alt="new pinoy movies, watch online" border="0" />
-				</a>
-			</div>
 		<?php
 		wp_reset_query();
 		$xy = 1;

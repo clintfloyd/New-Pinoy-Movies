@@ -1086,7 +1086,11 @@ textarea.field {
     display: block;
     padding: 9px 0 8px;
 }
-style.css (line 206)
+
+.commentlist .comment.bypostauthor{
+	background:#333333;
+}
+
 form * {
     font-family: "Myriad Pro","Trebuchet MS",Tahoma,Sans-Serif;
 }
@@ -1118,4 +1122,40 @@ form .button {
     margin: 0;
     outline: 0 none;
     padding: 0;
+}
+.comment-body a{
+	color: #EDE9D9;
+	text-decoration:underline;
+}
+.extras{
+    width:1000px;
+    margin-bottom:40px;
+}
+.extras .xtrah2{
+    font-size:15px;
+    font-weight:solid;
+    color:#535353;
+    margin:0;
+    padding:0;
+    text-shadow:0 1px 1px silver;
+}
+.extras .xtracontent{
+    width:960px;
+    padding:20px;
+    border:1px solid silver;
+}
+.extras .xtracontent .stream{
+    width:150px;
+    height:150px;
+    padding:1px;
+    background:#EFEED1;
+    float:left;
+    margin-right:9px;
+    overflow:hidden;
+    text-align:center;
+}
+
+.extras .xtracontent .stream img{
+    width:150px;
+    height:150px;
 }
