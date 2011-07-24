@@ -22,9 +22,18 @@
 					</div>
 					<br clear="all" />
 				</div>
+				<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 				<div class="undertitle">
 					<ul>
-						<li style="float:left; background:#fff; width:300px; height:20px; -moz-border-radius:0; -moz-box-shadow:none;"><iframe width="300" height="25" src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode($_SERVER['SCRIPT_URI']); ?>&layout=standard&show_faces=true&width=300&height=25&action=like&font=tahoma&colorscheme=light" frameborder="0"></iframe></li>
+						<li style="float:left; background:#fff; width:465px; height:20px; -moz-border-radius:0; -moz-box-shadow:none;">
+<div style="float:left">
+<g:plusone></g:plusone>
+</div>
+<div style="float:left">
+<iframe width="300" height="25" src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode($_SERVER['SCRIPT_URI']); ?>&layout=standard&show_faces=true&width=300&height=25&action=like&font=tahoma&colorscheme=light" frameborder="0"></iframe>
+</div>
+<br clear="all" />
+</li>
 						<li>Added: <?php the_date(); ?></li>
 						<li>Tags
 							<ul>
