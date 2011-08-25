@@ -2,6 +2,8 @@
 	define("EV_VERSION", 41);
 	remove_action( 'init', 'wp_admin_bar_init' );
 
+	function my_function_admin_bar(){ return false; }
+	add_filter( 'show_admin_bar' , 'my_function_admin_bar');
 
 function print_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>

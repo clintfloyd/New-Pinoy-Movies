@@ -12,12 +12,12 @@ body{
 <?php if($_SERVER['SERVER_NAME'] == "newpinoymovies.com" ||  $_SERVER['SERVER_NAME']=="www.newpinoymovies.com"){?>
 	<script type="text/javascript">
 	//interstitial ad
-	clicksor_enable_inter = true; clicksor_maxad = -1;	 
+	clicksor_enable_inter = true; clicksor_maxad = 5;	 
 	clicksor_hourcap = -1; clicksor_showcap = 2;
 	clicksor_enable_adhere = false;
 	//default pop-under house ad url
 	clicksor_enable_pop = true; clicksor_frequencyCap = -1;
-	durl = 'http://www.newpinoymovies.com';//default banner house ad url 
+	durl = 'http://www.newpinoymovies.com/advertisement/';//default banner house ad url 
 	clicksor_default_url = 'http://www.pinoy-movies.info/sites/images-01/leaderboard.php';
 	clicksor_banner_border = '#f2da00'; clicksor_banner_ad_bg = '#FFFFFF';
 	clicksor_banner_link_color = '#000000'; clicksor_banner_text_color = '#666666';
