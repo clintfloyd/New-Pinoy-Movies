@@ -1,0 +1,12 @@
+.extrabutton{
+	background:url("images/sidebutton.png") no-repeat;
+	position:fixed;
+	top:35%;
+	left:-20px;
+	width:66px;
+	height:74px;
+	cursor:pointer;
+}
+.extrabutton:hover{
+	left:-10px;
+}

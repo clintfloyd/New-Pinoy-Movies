@@ -1,0 +1,6 @@
+
+<div style="float:left">
+
+<g:plusone></g:plusone>
+
+</div>
