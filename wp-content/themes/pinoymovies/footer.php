@@ -1,4 +1,4 @@
-<div id="chatboxcontainer"></div>
+<div id="chatboxcontainer"><a href="javascript:void(0);" id="clickheretochat">>>> Click Here to Chat <<<</a></div>
 <div class="listing-container-line"></div>				
 		<div style="margin:auto auto; width:790px;">		
 		</div>				
@@ -150,7 +150,8 @@
 	</div>	
 </div>		
 </body>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/scripts.js"></script>			
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/scripts.js"></script>
+<script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/lazyload.js"></script>	
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/norightclick.js"></script>
 <script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/searchbar.js"></script>
 <script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/homemenu.js"></script>

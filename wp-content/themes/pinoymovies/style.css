@@ -9,6 +9,17 @@ body{
 #home{
 	margin-left:5px;
 }
+#clickheretochat{
+	display:block;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px;
+	margin:5px;
+	background:silver;
+	text-align:center;
+	color:#000;
+	text-decoration:none;
+}
 .adslot-container{
 	width:1000px;
 	margin-top:20px;

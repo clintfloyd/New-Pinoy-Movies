@@ -1,9 +1,9 @@
 <?php
-	define("EV_VERSION", 41);
-	remove_action( 'init', 'wp_admin_bar_init' );
+define("EV_VERSION", 41);
+remove_action( 'init', 'wp_admin_bar_init' );
 
-	function my_function_admin_bar(){ return false; }
-	add_filter( 'show_admin_bar' , 'my_function_admin_bar');
+function my_function_admin_bar(){ return false; }
+add_filter( 'show_admin_bar' , 'my_function_admin_bar');
 
 function print_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
@@ -561,18 +561,98 @@ width="50%"
 			  <td class="left">Thumbnail:</td>
 			  <td colspan="2">   
               	<div><img id="video_thumbnail_preview" style=" clear:both;" src="<?php if(!get_post_meta($post_ID, '_video_thumbnail_small',true)){ echo 'http://img138.imageshack.us/img138/7961/photonotavailable.jpg'; } else{ echo get_post_meta($post_ID, '_video_thumbnail_small',true);}?>" /></div>
-				<iframe name="video_upload_iframe" style="width:380px;height:30px;" frameborder="0" scrolling="no" src="<?php bloginfo("url")?>?action=video_upload_form"></iframe>
-                <input type="hidden" name="video_thumbnail" id="video_thumbnail" value="<?php echo get_post_meta($post_ID, '_video_thumbnail',true);?>" />
-                <input type="hidden" name="video_thumbnail_small" id="video_thumbnail_small" value="<?php echo get_post_meta($post_ID, '_video_thumbnail_small',true);?>" />
+				<iframe name="video_upload_iframe" style="width:380px;height:30px;" frameborder="0" scrolling="no" src="<?php bloginfo("url")?>?action=video_upload_form"></iframe><br />
+                <style>
+                	.imagefields{
+                		padding:10px;
+                		border:1px solid silver;
+                		margin-bottom:20px;
+                		margin-top:10px;
+                		font-family:Arial;
+                		background:#fff;	
+                	}
+                	.imagefields div input{
+                		width:430px;
+                	}
+                	
+                	.imagefields div h1{
+                		margin:0;
+                		padding:0;
+                		margin-bottom:20px;
+                		font-size:15px;
+                	}
+                	.imagefields div span{
+                		    left: 6px;
+						    position: relative;
+						    top: 19px;
+						    color:silver;
+                	}
+                </style>
+                <script>
+                	jQuery(document).ready(function(){
+                		var vidThumb = jQuery("#video_thumbnail").val();
+                		var vidThumbSmall = jQuery("#video_thumbnail_small").val();
+                		
+                		if(jQuery.trim(vidThumb) != ""){
+                			jQuery(".largeimg").fadeOut();
+                		}
+                		if(jQuery.trim(vidThumbSmall) != ""){
+                			jQuery(".smallimg").fadeOut();
+                		}
+                		
+                		jQuery(".largeimg").click(function(){
+                			jQuery("#video_thumbnail").focus();
+                		});
+                		
+                		jQuery(".smallimg").click(function(){
+                			jQuery("#video_thumbnail_small").focus();
+                		});
+                		
+                		jQuery("#video_thumbnail").keyup(function(){
+                			vidThumb = jQuery("#video_thumbnail").val();
+                			if(jQuery.trim(vidThumb) != ""){
+	                			jQuery(".largeimg").fadeOut("fast");
+	                		}else{
+	                			jQuery(".largeimg").fadeIn("fast");
+	                		}
+                		});
+                		
+                		jQuery("#video_thumbnail_small").keyup(function(){
+                			vidThumbSmall = jQuery("#video_thumbnail_small").val();
+                			if(jQuery.trim(vidThumbSmall) != ""){
+	                			jQuery(".smallimg").fadeOut("fast");
+	                		}else{
+	                			jQuery(".smallimg").fadeIn("fast");
+	                		}
+                		});
+                		
+                	});
+                </script>
+                <div class="imagefields">
+                	<div>
+                		<h1>Image Previews:</h1>
+                		Copy and Paste image source from other URL on the specified text boxes below.
+                	</div>
+                	<div>
+		                <span class="largeimg">Large Image Preview:</span><br />
+		                <input type="text" name="video_thumbnail" id="video_thumbnail" value="<?php echo get_post_meta($post_ID, '_video_thumbnail',true);?>" />
+	                </div>
+	                <div>
+		                <span class="smallimg">Small Image Thumbnail:</span><br />
+		                <input type="text" name="video_thumbnail_small" id="video_thumbnail_small" value="<?php echo get_post_meta($post_ID, '_video_thumbnail_small',true);?>" />
+	                </div>
+                </div>
 			</td>
 			</tr>
-            <tr>
+            <tr style="display:none;">
 			<td class="left">DVD Download Url:</td>
 			<td><input name="video_dvd_downurl" type="text" id="video_dvd_downurl" size="40" value="<?php echo get_post_meta($post_ID, '_video_dvd_downurl',true);?>" /></td>
 			</tr>
             <tr>
-			<td class="left">Featured:</td>
-			<td><input name="video_featured" type="checkbox" id="video_featured" value="1" <?php if(get_post_meta($post_ID, '_video_featured',true)){ echo 'checked="checked"';}?> /></td>
+            	<div style="margin-top:10px;">
+					<td class="left">Featured:</td>
+					<td><input name="video_featured" type="checkbox" id="video_featured" value="1" <?php if(get_post_meta($post_ID, '_video_featured',true)){ echo 'checked="checked"';}?> /></td>
+				</div>
 			</tr>
 			</table>    
 		</div></div>

@@ -27,7 +27,6 @@
 
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.js" type="text/javascript"></script>
 <script type="text/javascript"> jQuery.noConflict(); </script>
-<script type="text/javascript" src="<?php bloginfo("stylesheet_directory"); ?>/js/lazyload.js"></script>
 </head>
 
 <body>
@@ -82,7 +81,7 @@
 	<div class="main-header">
 		<div class="top">
 			<div class="logo">
-				<a href="<?php bloginfo('url'); ?>" title="Home | New Pinoy Movies"><img border="0" src="<?php bloginfo('stylesheet_directory'); ?>/images/logov4.png" alt="New Pinoy Movies" /></a>
+				<a href="<?php bloginfo('url'); ?>" title="Home | New Pinoy Movies"><img border="0" src="/images/logov4.png" alt="New Pinoy Movies" /></a>
 				<br />
 				<span>Watch New Pinoy Movies Online. Free Movies.</span>
 			</div>
@@ -115,7 +114,6 @@
 				<ul>
 					<li id="home"><a href="<?php bloginfo('url'); ?>">HOME</a></li>
 					<li id="2" class="dropdown"><a href="<?php bloginfo('url'); ?>/category/pinoy-movies">PINOY MOVIES &raquo;</a></li>
-					<li id="3" class="dropdown"><a href="<?php bloginfo('url'); ?>/category/tv-programs">TV PROGRAMS &raquo;</a></li>
 					<li id="home"><a href="<?php bloginfo('url'); ?>/category/metro-manila-film-festival-2" title="Metro Manila Film Festival Movies">MMFF Movies</a></li>
 					
 					<?php
@@ -136,6 +134,7 @@
 				<form method="get" action="/">
 					<label id="lblSearch">Search movies here</label>
 					<input type="text" name="s" id="txtboxsearch" class="inactive" />
+					<input type="hidden" name="ref" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 				</form>
 			</div>
 			<br clear="all" />
@@ -151,31 +150,6 @@
 						<?php
 							wp_reset_query();
 							query_posts('showposts=30&category_name=pinoy movies&orderby=date');
-							$x=0;
-							$other_titles = array();
-							if ( have_posts() ) : while ( have_posts() ) : the_post();
-						?>
-							<li><a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Online | New Pinoy Movies"><?php the_title(); ?></a></li>
-						<?php endwhile; else:
-							endif;?>
-						</ul>
-					</div>
-				</div>
-				<div>
-				</div>
-			</div>
-		</div>
-		<div class="the-menu" id="head-tv">
-			<div class="the-border">
-				<div>
-					<div>
-						<h1>TV Programs</h1>
-					</div>
-					<div>
-						<ul>
-						<?php
-							wp_reset_query();
-							query_posts('showposts=30&category_name=tv programs&orderby=date');
 							$x=0;
 							$other_titles = array();
 							if ( have_posts() ) : while ( have_posts() ) : the_post();

@@ -74,7 +74,7 @@
 				
 				if($post_date_string >= $last_3_days_string){	
 				?>
-					<img src="/new.png" alt="new pinoy movies" border="0" class="newItem" />
+					<img src="/others/gray.png" original="/new.png" alt="new pinoy movies" border="0" class="newItem" />
 				<?php
 				}
 				$tmpThumb = get_post_meta(get_the_ID(), '_video_thumbnail_small',true);
@@ -93,7 +93,7 @@
 				?>
 				<span class="commentcount"><a rel="nofollow" style="color:#fff;text-decoration:none;" href="<?php the_permalink(); ?>#comments"><?php echo $commentscount; ?><span class="innerspan"> <?php echo $commenttext; ?></span></a></span>
 				<div class="mov-thumb">
-					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies"><img style="width:183px; height:183px;" src="<?php echo $thumbnailsource;?>" alt="new pinoy movies, free tagalog movies, <?php echo the_title(); ?> | <?php echo $xpert; ?>" border="0" /></a>
+					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies"><img style="width:183px; height:183px;" src="/others/gray.png" original="<?php echo $thumbnailsource;?>" alt="new pinoy movies, free tagalog movies, <?php echo the_title(); ?> | <?php echo $xpert; ?>" border="0" /></a>
 				</div>
 				<div class="mov-title">
 					<a href="<?php the_permalink() ?>" title="Watch <?php the_title(); ?> Movie Online | New Pinoy Movies">

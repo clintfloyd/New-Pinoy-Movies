@@ -1,4 +1,4 @@
-<div class="billboard-container" id="thebillboard">	<div class="billboard-content" id="thebillboardcontent">
+<div class="billboard-container" id="thebillboard">	<div class="billboard-content" id="thebillboardcontent">
 		<?php
 		wp_reset_query();
 		$xy =1;
@@ -28,4 +28,4 @@
 		remove_filter('posts_where', 'featured_where_featured');
 		?>
 	</div>
-</div>	<br clear="all" />
+</div>	<br clear="all" />

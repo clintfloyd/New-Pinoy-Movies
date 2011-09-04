@@ -4,6 +4,7 @@
 		<div class="doublecontent">
 			<div class="left">
 			<?php 
+				$result=0;
 				wp_reset_query();
 				if (have_posts()) : ?>
 				  <h2>Search result for '<?php echo $_GET['s']; ?>'</h2>
@@ -27,19 +28,27 @@
 				</div>
 				
 				
-				<?php endwhile; ?>
+				<?php 
+				$result++;
+				endwhile; 
+				
+				?>
 				<div style="padding-top:50px; height:30px; margin:0 auto; text-align:center;" class="navi">
 					<div class="alignleft pre"><?php previous_posts_link('&laquo; Previous'); ?></div>    
 					<div class="alignright next"><?php next_posts_link('Next &raquo;') ?></div>
 				</div>
-				<?php else : ?>
+				<?php else : 
+				$result=0;
+				?>
 				
 				<h2>
 				No result found.
 				</h2>
 				
 				
-			<?php endif; ?>
+			<?php endif; 
+			$wpdb->insert("wp_ish_searches",array("term"=>mysql_real_escape_string($_GET['s']), "result_count"=>$result,"referal"=>$_GET['ref']));
+			?>
 			</div>
 			<?php include("sidebarpage.php"); ?>
 			<br clear="all" />
